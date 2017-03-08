@@ -14,6 +14,13 @@ feature 'User reviews articles', %(
   scenario "when I visit /articles I should see all submitted articles" do
     visit 'articles/new'
 
+    fill_in 'Article Title', with: 'How to Beat the Robots'
+    fill_in 'Article URL', with: 'https://www.nytimes.com/2017/03/07/upshot/how-to-beat-the-robots.html?rref=collection%2Fsectioncollection%2Ftechnology&action=click&contentCollection=technology&region=stream&module=stream_unit&version=latest&contentPlacement=6&pgtype=sectionfront'
+    fill_in 'Article Description', with: 'This is an article about how to survive in a world of automation'
+
+    click_button "Submit"
+    visit 'articles/new'
+
     fill_in 'Article Title', with: 'Solar power growth leaps by 50% worldwide thanks to US and China'
     fill_in 'Article URL', with: 'https://www.theguardian.com/environment/2017/mar/07/solar-power-growth-worldwide-us-china-uk-europe'
     fill_in 'Article Description', with: 'This is an article about solar power growth'
